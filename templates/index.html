@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraper API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 600px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            margin: 10px 0;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .note {
+            font-size: 0.9em;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Web Scraper API</h1>
+    <div class="container">
+        <p>Use this form to scrape metadata from a URL. Optionally, you can specify which metadata to return by using the <strong>only</strong> parameter.</p>
+
+        <form action="/scrape" method="get">
+            <label for="url">Enter URL:</label>
+            <input type="text" id="url" name="url" placeholder="https://example.com" required>
+
+            <label for="only">Return specific metadata (optional):</label>
+            <select id="only" name="only">
+                <option value="">All Metadata</option>
+                <option value="title">Title</option>
+                <option value="image">OG Image</option>
+                <option value="og_tags">OG Tags</option>
+                <option value="favicon">Favicon</option>
+            </select>
+
+            <input type="submit" value="Scrape">
+        </form>
+
+        <p class="note">Leave the "Return specific metadata" field empty to return all metadata.</p>
+    </div>
+
+</body>
+</html>
